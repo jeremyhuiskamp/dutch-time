@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    padding-top: 100px;
+}
+
+circle {
+    stroke: black;
+    stroke-width: 2px;
+    fill: white;
+}
+
+line {
+    stroke-linecap: round;
+    stroke: black;
+}
+
+line.hour {
+    stroke-width: 6px;
+}
+
+line.quarter {
+    stroke-width: 4px;
+}
+
+line.five {
+    stroke-width: 2px;
+}
+
+line.minute {
+    stroke-width: 1px;
+}
+
+#hourhand line {
+    stroke: navy;
+    stroke-width: 3px;
+}
+
+#minutehand line {
+    stroke: green;
+    stroke-width: 2px;
+}
+
+#secondhand line {
+    stroke: grey;
+    stroke-width: 1px;
+}
+
+#dutchanswer {
+    padding: 10px;
+}
+
+div.hidden {
+    color: grey;
+}
+
+div.shown {
+    color: black;
+}

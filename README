@@ -1,0 +1,3 @@
+A very simple browser-based application that displays random times on a clock and the Dutch sentence expressing that time.  Allows beginners to practice reading time with feedback.
+
+Uses SVG to draw the clock.  This seems to work in all major browsers except IE and I'm not sure it would even work there with an SVG plugin.
