@@ -3,10 +3,14 @@ body {
     padding-top: 100px;
 }
 
-circle {
+circle.rim {
     stroke: black;
     stroke-width: 2px;
     fill: white;
+}
+
+circle.pin {
+    fill: gold;
 }
 
 line {
@@ -38,11 +42,6 @@ line.minute {
 #minutehand line {
     stroke: green;
     stroke-width: 2px;
-}
-
-#secondhand line {
-    stroke: grey;
-    stroke-width: 1px;
 }
 
 #dutchanswer {
