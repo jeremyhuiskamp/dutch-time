@@ -36,7 +36,7 @@ function num(number) {
         "9":  "negen",
         "10": "tien",
         "11": "elf",
-        "12": "twalf",
+        "12": "twaalf",
         "13": "dertien",
         "14": "veertien"
     }["" + number];
