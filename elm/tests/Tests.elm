@@ -1,0 +1,52 @@
+module Tests exposing (suite)
+
+import Expect exposing (Expectation)
+import Fuzz exposing (Fuzzer, int, list, string)
+import Main exposing (dutchTimeSentence)
+import Test exposing (..)
+
+
+suite : Test
+suite =
+    describe "Dutch time sentences"
+        ([ ( "12:00", "twaalf uur", 12, 0 )
+         , ( "1:00", "een uur", 1, 0 )
+         , ( "2:00", "twee uur", 2, 0 )
+         , ( "3:00", "drie uur", 3, 0 )
+         , ( "4:00", "vier uur", 4, 0 )
+         , ( "5:00", "vijf uur", 5, 0 )
+         , ( "6:00", "zes uur", 6, 0 )
+         , ( "7:00", "zeven uur", 7, 0 )
+         , ( "8:00", "acht uur", 8, 0 )
+         , ( "9:00", "negen uur", 9, 0 )
+         , ( "10:00", "tien uur", 10, 0 )
+         , ( "11:00", "elf uur", 11, 0 )
+         , ( "12:01", "een over twaalf", 12, 1 )
+         , ( "12:02", "twee over twaalf", 12, 2 )
+         , ( "12:03", "drie over twaalf", 12, 3 )
+         , ( "12:04", "vier over twaalf", 12, 4 )
+         , ( "12:05", "vijf over twaalf", 12, 5 )
+         , ( "12:06", "zes over twaalf", 12, 6 )
+         , ( "12:07", "zeven over twaalf", 12, 7 )
+         , ( "12:08", "acht over twaalf", 12, 8 )
+         , ( "12:09", "negen over twaalf", 12, 9 )
+         , ( "12:10", "tien over twaalf", 12, 10 )
+         , ( "12:11", "elf over twaalf", 12, 11 )
+         , ( "12:12", "twaalf over twaalf", 12, 12 )
+         , ( "12:13", "dertien over twaalf", 12, 13 )
+         , ( "12:14", "veertien over twaalf", 12, 14 )
+         , ( "12:15", "kwart over twaalf", 12, 15 )
+         , ( "12:16", "veertien voor half een", 12, 16 )
+         , ( "12:29", "een voor half een", 12, 29 )
+         , ( "12:30", "half een", 12, 30 )
+         , ( "12:31", "een over half een", 12, 31 )
+         , ( "12:44", "veertien over half een", 12, 44 )
+         , ( "12:45", "kwart voor een", 12, 45 )
+         , ( "12:46", "veertien voor een", 12, 46 )
+         , ( "12:59", "een voor een", 12, 59 )
+         ]
+            |> List.map
+                (\( name, expected, hour, minute ) ->
+                    test name <| \_ -> Expect.equal expected (dutchTimeSentence hour minute)
+                )
+        )
