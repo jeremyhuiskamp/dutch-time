@@ -1,0 +1,6 @@
+language: node_js
+install:
+  - npm install -g elm@0.18
+  - npm install -g elm-test@0.18
+script:
+  - cd elm/ && elm-test
