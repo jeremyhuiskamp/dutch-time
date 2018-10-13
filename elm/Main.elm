@@ -16,14 +16,6 @@ type alias Model =
     }
 
 
-initialModel : Model
-initialModel =
-    { hour = 1
-    , minute = 30
-    , showDutch = False
-    }
-
-
 type Msg
     = HideDutch
     | ShowDutch
@@ -221,7 +213,13 @@ view model =
 main : Program Never Model Msg
 main =
     Html.program
-        { init = ( initialModel, randomizeTime )
+        { init =
+            ( { hour = 0
+              , minute = 0
+              , showDutch = False
+              }
+            , randomizeTime
+            )
         , view = view
         , update = update
         , subscriptions = \model -> Sub.none
